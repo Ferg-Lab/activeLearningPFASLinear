@@ -11,6 +11,7 @@ from rdkit import Chem
 from rdkit.Chem.Fragments import *
 
 
+#### BLOCK AVG FES CV WEIGHTS
 def get_block_fes_using_cv_weights(temperature,  simDir, systemDir, colvarFileName, colvarFileContentList, cvmin, cvmax, nbins, cvname, cvbiasname, shiftCV, startTimeInPS, endTimeInPS):
 
     
@@ -29,9 +30,9 @@ def get_block_fes_using_cv_weights(temperature,  simDir, systemDir, colvarFileNa
     # discard initial few frames [frames where free energy is still being mapped]
     colvarData = colvarData [ (colvarData.time > startTimeInPS) & (colvarData.time <= endTimeInPS) ]
 
-    print("colvar filename")
-    print(colvarFileName)
-    print(colvarData)
+    #print("colvar filename")
+    #print(colvarFileName)
+    #print(colvarData)
     
     # calculate weights of each frame in colvarData
     weights = np.exp( (colvarData[cvbiasname]) /kbt)
@@ -53,6 +54,8 @@ def get_block_fes_using_cv_weights(temperature,  simDir, systemDir, colvarFileNa
     return feDf
 
 
+
+############### NOT USED
 def get_bin2_random_block_fes_using_cv_weights(temperature,  simDir, systemDir, colvarFileName, colvarFileContentList, cvmin, cvmax, nbins, cvname, cvbiasname, shiftCV, startTimeInPS, endTimeInPS, nblocks):
 
     
@@ -142,6 +145,7 @@ def get_bin2_random_block_fes_using_cv_weights(temperature,  simDir, systemDir, 
     return feDf
 
 
+############### NOT USED
 def get_random_block_fes_using_cv_weights(temperature,  simDir, systemDir, colvarFileName, colvarFileContentList, cvmin, cvmax, nbins, cvname, cvbiasname, shiftCV, startTimeInPS, endTimeInPS, sampleSize):
 
     
@@ -163,9 +167,9 @@ def get_random_block_fes_using_cv_weights(temperature,  simDir, systemDir, colva
     #print(colvarData)
     colvarData = colvarData.sample(n = sampleSize, replace = False, ) # random_state = 2)
 
-    print("colvar filename")
-    print(colvarFileName)
-    print(colvarData)
+    #print("colvar filename")
+    #print(colvarFileName)
+    #print(colvarData)
     
     # calculate weights of each frame in colvarData
     weights = np.exp( (colvarData[cvbiasname]) /kbt)
@@ -187,6 +191,7 @@ def get_random_block_fes_using_cv_weights(temperature,  simDir, systemDir, colva
     return feDf
 
 
+############### NOT USED
 def get_fes_using_cv_weights(temperature,  simDir, systemDir, colvarFileName, colvarFileContentList, cvmin, cvmax, nbins, cvname, cvbiasname, shiftCV, discardTimeInPS):
     
     kb = 8.31446261815324*0.001 #kJ/molK
@@ -223,6 +228,10 @@ def get_fes_using_cv_weights(temperature,  simDir, systemDir, colvarFileName, co
     
     return feDf
 
+
+
+
+
 def get_fes_avg_sd(fesDFList, cvname, nbins):
     
     localfesDFList = copy.deepcopy(fesDFList)
@@ -232,7 +241,7 @@ def get_fes_avg_sd(fesDFList, cvname, nbins):
     
     nsamples = len(localfesDFList)
     
-    print("nsamples: ", nsamples)
+    #print("nsamples: ", nsamples)
     
     for run in range(nsamples):
         
@@ -340,7 +349,7 @@ def get_delta_fe_areaMethod(systemFEListUpdated, kT, cvname, cutoff):
     
     nsamples = len(localfesDFListUpdated)
     
-    print("nsamples: ", nsamples)
+    #print("nsamples: ", nsamples)
     
     freeEnergyList = []
     fe_minList = []
@@ -376,8 +385,68 @@ def get_delta_fe_areaMethod(systemFEListUpdated, kT, cvname, cutoff):
     
     avgFreeEnergy = np.mean(freeEnergyArray)
     sdFreeEnergy = np.std(freeEnergyArray)
-                    
+                  
+    #minLocation = avgFEDF[ ( avgFEDF.avg  == avgFEDF.avg.min() ) ][cvname].values[0]
+    #minFreeEnergy = avgFEDF[ ( avgFEDF.avg == avgFEDF.avg.min() ) ].avg.values[0]
+    #minSD = avgFEDF[ ( avgFEDF.avg == avgFEDF.avg.min() ) ].sd.values[0]
     
+    #return minLocation, minFreeEnergy, minSD
+    
+    return avgFreeEnergy, sdFreeEnergy
+
+
+# Defining Delta FE as area under the unbiased probability curve obtained from the aligned and shifted free energy profiles
+def get_Kb_areaMethod(systemFEListUpdated, kT, cvname, cutoff):
+    
+    localfesDFListUpdated = copy.deepcopy(systemFEListUpdated)
+    
+    #avgFE = np.zeros(nbins)
+    #varFE = np.zeros(nbins)
+    
+    nsamples = len(localfesDFListUpdated)
+    
+    print("nsamples: ", nsamples)
+    
+    freeEnergyList = []
+    fe_minList = []
+    for block in range(nsamples):
+        
+        #avgFE += localfesDFList[run].fe.values
+        #(localfesDFListUpdated[block][cvname] > 0.45) &
+        boundReg = localfesDFListUpdated[block][ (localfesDFListUpdated[block][cvname] <= cutoff) ]
+        boundReg = boundReg[~np.isinf(boundReg.fe)]
+        
+        fe_min = 1000
+        # any CV is fine because it is the same in all runs.
+        fe_min = find_min_avg(localfesDFListUpdated[block][cvname].values, localfesDFListUpdated[block].fe.values, fe_min)
+        
+        #print(boundReg)
+        
+        boundReg.fe = boundReg.fe - fe_min
+        
+        C0 = 1/(1661*1e-3)
+        
+        #print(boundReg[cvname])
+        #print(boundReg[cvname]*boundReg[cvname])
+        #print(np.exp(- (boundReg.fe )/(kT)))
+        #print(boundReg[cvname]*boundReg[cvname]*np.exp(- (boundReg.fe )/(kT)))
+        
+        freeBoundReg = C0* simps( 4*np.pi*boundReg[cvname]*boundReg[cvname]*np.exp(- (boundReg.fe )/(kT)),  boundReg[cvname] ) 
+    
+        freeEnergyList.append(freeBoundReg)
+        
+        fe_minList.append(fe_min)
+        
+    freeEnergyArray = np.array(freeEnergyList)
+    
+    #print("free energy array\n")
+    #print(freeEnergyArray)
+    
+    #print(fe_minList)
+    
+    avgFreeEnergy = np.mean(freeEnergyArray)
+    sdFreeEnergy = np.std(freeEnergyArray)
+                  
     #minLocation = avgFEDF[ ( avgFEDF.avg  == avgFEDF.avg.min() ) ][cvname].values[0]
     #minFreeEnergy = avgFEDF[ ( avgFEDF.avg == avgFEDF.avg.min() ) ].avg.values[0]
     #minSD = avgFEDF[ ( avgFEDF.avg == avgFEDF.avg.min() ) ].sd.values[0]
@@ -399,8 +468,8 @@ def write_fes_tofile(method, fileName, analyte, probeSMILES, minFreeEnergy, minS
     
     lBr = probeSMILES.count('Br')
     
-    print("\nlfl")
-    print(lfl)
+    #print("\nlfl")
+    #print(lfl)
     
     X = 'F'
     
@@ -501,8 +570,8 @@ def old_write_fes_tofile(method, fileName, analyte, probeSMILES, minLocation, mi
     
     lBr = probeSMILES.count('Br')
     
-    print("\nlfl")
-    print(lfl)
+    #print("\nlfl")
+    #print(lfl)
     
     X = 'F'
     
@@ -757,7 +826,7 @@ def get_block_unbiased_property(temperature,  simDir, systemDir, colvarFileName,
         combinedData = combinedData
         dname = nameList[2]
         
-    print(combinedData)
+    #print(combinedData)
                 
     # calculate weights of each frame in colvarData
     weights = np.exp( (combinedData[cvbiasname]) /kbt)
