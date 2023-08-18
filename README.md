@@ -5,7 +5,7 @@ This repository demonstrates the data-driven discovery of linear molecular probe
 
 ---
 
-Getting started
+Usage
 
 1. [Codes](./Codes): Estimation of binding free energies & binding constants. Please see [Codes/README.md](./Codes/README.md) for getting started.
 2. [JCED_data_each_cycle](./JCED_data_each_cycle): Sensitivity & selectivity of each probe in each cycle for PFOS relative to SDS.
