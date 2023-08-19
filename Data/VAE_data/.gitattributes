@@ -1,2 +1,7 @@
 Ext_Lib.csv filter=lfs diff=lfs merge=lfs -text
 Ext_Lib.csv filter=lfs diff=lfs merge=lfs -text
+LatentVecs_Extensive.npy filter=lfs diff=lfs merge=lfs -text
+LatentVecs_Primary.npy filter=lfs diff=lfs merge=lfs -text
+LatentVecs_ZINC.npy filter=lfs diff=lfs merge=lfs -text
+PCA_ZINC_TrainingSet.npy filter=lfs diff=lfs merge=lfs -text
+ZINC_Lib.csv filter=lfs diff=lfs merge=lfs -text
