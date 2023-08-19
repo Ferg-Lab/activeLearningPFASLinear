@@ -1,0 +1,8 @@
+chem_sample_tables filter=lfs diff=lfs merge=lfs -text
+folder-pdb-each-cycle filter=lfs diff=lfs merge=lfs -text
+GPR_training_data filter=lfs diff=lfs merge=lfs -text
+JCED_data_each_cycle filter=lfs diff=lfs merge=lfs -text
+master-pbmd-files-final filter=lfs diff=lfs merge=lfs -text
+mw_cas_iupac_format filter=lfs diff=lfs merge=lfs -text
+PBMetaD_InputFiles filter=lfs diff=lfs merge=lfs -text
+smiles-each-cycle filter=lfs diff=lfs merge=lfs -text
