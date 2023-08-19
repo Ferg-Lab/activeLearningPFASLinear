@@ -1,0 +1,19 @@
+	SMILES	Mol. weight [kg/kmol]	Sensitivity, $-\Delta G_{PFOS}$ [kJ/mol]	$\Delta G_{SDS}$ [kJ/mol]	Selectivity, $-\Delta\Delta G_{PFOS - SDS}$ [kJ/mol]	$K_b^\mathrm{PFOS}$	$K_b^\mathrm{SDS}$	$K_b^\mathrm{PFOS}/K_b^\mathrm{SDS}$
+0	CNCCCC(Br)(Br)C(Br)(Br)C(Br)(Br)C(Br)(Br)C(Br)(Br)C(Br)(Br)Br	1170.02	2.8$\pm$0.4	6.2$\pm$0.3	-3.4$\pm$0.5	13.9$\pm$2.0	32.5$\pm$4.7	0.4$\pm$0.1
+1	CCCC(Br)(Br)C(Br)(Br)C(Br)(Br)C(Br)(Br)C(Br)(Br)C(Br)(Br)C(Br)(Br)P(C)C	1292.93	5.1$\pm$0.7	6.0$\pm$1.0	-0.8$\pm$1.2	37.0$\pm$8.5	40.6$\pm$12.8	0.9$\pm$0.4
+2	CN(C)CCCC(Br)(Br)C(Br)(Br)C(Br)(Br)C(Br)(Br)C(Br)(Br)C(Br)(Br)C(Br)(Br)Br	1353.87	5.6$\pm$0.8	8.9$\pm$0.2	-3.2$\pm$0.9	38.8$\pm$11.9	107.5$\pm$10.3	0.4$\pm$0.1
+3	CNCCCCCCC(Br)(Br)C(Br)(Br)C(Br)(Br)C(Br)(Br)C(Br)(Br)C(Br)(Br)C(Br)(Br)Br	1381.9	7.2$\pm$0.3	10.5$\pm$0.1	-3.3$\pm$0.4	64.1$\pm$8.5	159.2$\pm$11.0	0.4$\pm$0.1
+4	CCCCC(Br)(Br)C(Br)(Br)C(Br)(Br)C(Br)(Br)C(Br)(Br)C(Br)(Br)C(Br)(Br)C(Br)(Br)[N+](C)(C)C	1474.84	5.1$\pm$0.2	7.4$\pm$0.9	-2.2$\pm$0.9	33.5$\pm$2.8	59.1$\pm$18.9	0.6$\pm$0.2
+5	CN(C)CC(Cl)(Cl)C(Cl)(Cl)C(Cl)(Cl)C(Cl)(Cl)C(Cl)(Cl)C(Cl)(Cl)C(Cl)(Cl)C(Cl)(Cl)C(Cl)(Cl)Cl	830.47	6.4$\pm$1.0	6.8$\pm$1.3	-0.5$\pm$1.7	49.2$\pm$20.5	50.7$\pm$26.6	1.0$\pm$0.7
+6	CP(C)CCCCC(Br)(Br)C(Br)(Br)C(Br)(Br)C(Br)(Br)C(Br)(Br)C(Br)(Br)C(Br)(Br)C(Br)(Br)C(Br)(Br)Br	1724.53	7.9$\pm$0.3	10.0$\pm$0.4	-2.1$\pm$0.5	91.1$\pm$9.7	174.0$\pm$27.3	0.5$\pm$0.1
+7	CNCCCCC(Cl)(Cl)C(Cl)(Cl)C(Cl)(Cl)C(Cl)(Cl)C(Cl)(Cl)C(Cl)(Cl)C(Cl)(Cl)C(Cl)(Cl)C(Cl)(Cl)Cl	858.51	7.6$\pm$0.4	11.1$\pm$0.5	-3.5$\pm$0.7	69.2$\pm$10.8	206.2$\pm$41.2	0.3$\pm$0.1
+8	CP(C)C(Br)(Br)C(Br)(Br)C(Br)(Br)C(Br)(Br)C(Br)(Br)C(Br)(Br)C(Br)(Br)C(Br)(Br)C(C)(Br)Br	1604.57	3.9$\pm$0.4	10.3$\pm$0.7	-6.3$\pm$0.8	23.2$\pm$4.0	192.3$\pm$46.9	0.1$\pm$0.0
+9	NCCCCC(Br)(Br)C(Br)(Br)C(Br)(Br)C(Br)(Br)C(Br)(Br)C(Br)(Br)C(Br)(Br)C(Br)(Br)C(Br)(Br)Br	1679.53	7.8$\pm$0.4	8.2$\pm$0.4	-0.4$\pm$0.6	94.1$\pm$14.7	74.6$\pm$11.0	1.3$\pm$0.3
+10	C[N+](C)(C)CCC(Br)(Br)C(Br)(Br)C(Br)(Br)C(Br)(Br)C(Br)(Br)C(Br)(Br)C(Br)(Br)C(Br)(Br)C(Br)(Br)Br	1694.55	3.9$\pm$0.2	5.9$\pm$0.9	-2.0$\pm$0.9	21.2$\pm$1.8	35.6$\pm$8.9	0.6$\pm$0.2
+11	CP(C)C(Br)(Br)C(Br)(Br)C(Br)(Br)C(Br)(Br)C(Br)(Br)C(Br)(Br)C(Br)(Br)C(Br)(Br)C(Br)(Br)C(C)(Br)Br	1774.41	4.1$\pm$0.1	5.3$\pm$0.5	-1.2$\pm$0.5	26.0$\pm$2.1	34.7$\pm$7.2	0.7$\pm$0.2
+12	CN(C)CC(Cl)(Cl)C(Cl)(Cl)C(Cl)(Cl)C(Cl)(Cl)C(Cl)(Cl)C(Cl)(Cl)C(Cl)(Cl)C(Cl)(Cl)C(Cl)(Cl)C(Cl)(Cl)Cl	912.41	5.8$\pm$0.7	8.5$\pm$0.6	-2.7$\pm$0.9	39.9$\pm$10.3	80.1$\pm$13.2	0.5$\pm$0.2
+13	CCCC(Br)(Br)C(Br)(Br)C(Br)(Br)C(Br)(Br)C(Br)(Br)C(Br)(Br)C(Br)(Br)C(Br)(Br)C(Br)(Br)[N+](C)(C)C	1630.66	4.7$\pm$0.1	5.4$\pm$0.2	-0.8$\pm$0.2	28.7$\pm$1.1	31.9$\pm$1.8	0.9$\pm$0.1
+14	CNCCC(Cl)(Cl)C(Cl)(Cl)C(Cl)(Cl)C(Cl)(Cl)C(Cl)(Cl)C(Cl)(Cl)C(Cl)(Cl)C(Cl)(Cl)C(Cl)(Cl)C(Cl)(Cl)C(Cl)(Cl)Cl	994.35	6.7$\pm$0.7	10.8$\pm$0.7	-4.1$\pm$1.0	51.5$\pm$9.7	154.9$\pm$33.7	0.3$\pm$0.1
+15	CCCC(Br)(Br)C(Br)(Br)C(Br)(Br)C(Br)(Br)C(Br)(Br)C(Br)(Br)C(Br)(Br)C(Br)(Br)NC	1431.78	4.9$\pm$0.8	4.7$\pm$0.2	0.2$\pm$0.9	34.9$\pm$11.5	24.0$\pm$2.1	1.5$\pm$0.5
+16	CN(C)C(Br)(Br)C(Br)(Br)C(Br)(Br)C(Br)(Br)C(Br)(Br)C(Br)(Br)C(Br)(Br)C(Br)(Br)C(C)(Br)Br	1587.6	5.5$\pm$0.5	6.0$\pm$0.8	-0.5$\pm$1.0	38.3$\pm$7.2	40.5$\pm$13.9	0.9$\pm$0.4
+17	CCCC(Br)(Br)C(Br)(Br)C(Br)(Br)C(Br)(Br)C(Br)(Br)C(Br)(Br)C(Br)(Br)C(Br)(Br)C(Br)(Br)N(C)C	1615.63	4.9$\pm$1.0	9.8$\pm$2.2	-4.9$\pm$2.4	34.4$\pm$11.2	186.9$\pm$119.2	0.2$\pm$0.1

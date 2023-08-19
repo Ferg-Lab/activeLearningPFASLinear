@@ -1,0 +1,50 @@
+;; Production
+
+;; integrator and number of steps
+integrator          =  md	    ; leap-frog integrator
+dt		    =  0.002	    ; 2 fs
+;nsteps              =  50000
+nsteps              =  500000000    ; number of steps 2e-6 ns * 5e8 = 1000 ns = 1 micro second1 micro second1 micro second1 micro second1 micro second1 micro second1 micro second1 micro second1 micro second1 micro second1 micro secondput control part (values indicate steps)                                                                          
+nstxout             =  0
+nstxout-compressed  =  1000         ; 2e-6 ns * 1e3 = 5e-3 ns = 2 ps                                                                                                
+nstvout             =  0                                                                                                
+nstfout             =  0
+nstlog              =  1000
+nstenergy           =  1000
+
+;; neighbor list
+cutoff-scheme       =  Verlet       ;
+nstlist             =  10	    ; step frequency for updating neighbour list
+
+;; PBC and cutoff's
+pbc                 =  xyz          ; PBC in all directions
+rlist               =  1.0          ; recommended values for force field
+coulombtype         =  PME          ; 
+rcoulomb            =  1.0          ; recommended values for force field
+vdwtype             =  Cut-off      ; 
+rvdw                =  1.0          ; recommended values for force field
+
+;; Constraints
+constraint_algorithm= lincs         ; for constraining heavy atoms
+constraints         = h-bonds
+
+; Temperature coupling
+tcoupl              = nose-hoover
+tc-grps             = System        ; PFO PLI SOL
+tau_t               = 0.5            ; 0.1 0.1 0.1   ; coupling constant in ps
+ref_t               = 300           ; 300 300 300   ; reference temperature
+
+; COM removal
+comm-grps           = System        ;PFO PLI SOL
+comm-mode           = Linear
+nstcomm             = 100
+
+; Pressure coupling
+pcoupl              = Parrinello-Rahman ; no pressure coupling
+pcoupltype          = isotropic
+tau-p               = 1
+compressibility     = 4.5e-5
+ref-p               = 1
+
+energygrps          = PRO ANA SOL
+DispCorr            = EnerPres

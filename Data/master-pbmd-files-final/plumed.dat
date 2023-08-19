@@ -1,0 +1,20 @@
+RESTART
+comPFOS: COM ATOMS=1-29
+comPROBE: COM ATOMS=30-43
+comDist: DISTANCE ATOMS=comPFOS,comPROBE
+
+htPFOS: DISTANCE ATOMS=9,25
+
+htProbe: DISTANCE ATOMS=31,35
+
+angleVec: ANGLE ATOMS=25,9,31,35
+
+PBMETAD ...
+ARG=comDist,htPFOS,htProbe,angleVec SIGMA=0.2,0.2,0.2,0.2 HEIGHT=1.2
+TEMP=300 PACE=500 BIASFACTOR=20 LABEL=pb
+FILE=hills_com.out,hills_htpfos.out,hills_htprobe.out,hills_angle.out
+GRID_MIN=0,0,0,0 GRID_MAX=8,3,3,pi GRID_BIN=5000,5000,5000,5000
+... PBMETAD
+
+# monitor the cv and the metadynamics bias potential
+PRINT STRIDE=100 ARG=comDist,htPFOS,htProbe,angleVec,pb.bias FILE=colvar.out

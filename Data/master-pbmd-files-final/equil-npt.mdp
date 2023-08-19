@@ -1,0 +1,52 @@
+;; Equilibration
+
+;; integrator and number of steps
+integrator          =  md	    ; leap-frog integrator
+dt		    =  0.002	    ; 2 fs
+nsteps              =  500000	    ; number of steps 2e-6 ns * 5e5 = 10e-1 ns = 1 ns  
+
+;; output control part (values indicate steps)                                                                          
+nstxout             =  0
+nstxout-compressed  = 10000         ; 2e-6 ns * 1e4 = 2e-2 ns = 20 ps                                                                                                
+nstvout             =  0                                                                                                
+nstfout             =  0
+nstlog              =  10000
+nstenergy           =  10000
+
+;; neighbor list
+cutoff-scheme       =  Verlet       ;
+nstlist             =  10	    ; step frequency for updating neighbour list
+
+;; PBC and cutoff's
+pbc                 =  xyz          ; PBC in all directions
+rlist               =  1.0          ; recommended values for force field
+coulombtype         =  PME          ; 
+rcoulomb            =  1.0          ; recommended values for force field
+vdwtype             =  Cut-off      ; 
+rvdw                =  1.0          ; recommended values for force field
+
+;; Constraints
+constraint_algorithm= lincs         ; for constraining heavy atoms
+constraints         = h-bonds
+
+; Velocity generation
+gen_vel             = yes
+gen_temp            = 300
+gen_seed            = -1
+
+; Temperature coupling
+tcoupl              = V-rescale
+tc-grps             = System
+tau_t               = 0.1           ; coupling constant in ps
+ref_t               = 300           ; reference temperature
+
+; Pressure coupling
+pcoupl              = Berendsen     ; no pressure coupling
+pcoupltype          = isotropic
+tau-p               = 1
+compressibility     = 4.5e-5
+ref-p               = 1
+
+
+;energygrps          = PFO PLI SOL
+DispCorr            = EnerPres

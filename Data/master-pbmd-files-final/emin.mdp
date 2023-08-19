@@ -1,0 +1,29 @@
+;; Energy minimization
+
+;; integrator and number of steps
+integrator          =  steep	    ; low-memory Broyden-Fletcher-Goldfarb-Shanno approach
+nsteps              =  500000	    ; number of steps
+
+;; Criteria for minimization 
+emtol               =  10	    ; convergence criterion
+emstep              =  0.01         ; intial step size
+
+;; neighbor list
+nstlist             =  10	    ; step frequency for updating neighbour list
+ns_type             =  grid	    ; grid ; method for nighbour searching (?)
+
+;; output control part (values indicate steps)
+nstxout             =  0
+nstvout             =  0
+nstfout             =  0
+
+;; PBC and cutoff's
+pbc                 =  xyz          ; PBC in all directions
+rlist               =  1.0          ; recommended values for force field
+coulombtype         =  PME          ; 
+rcoulomb            =  1.0          ; recommended values for force field
+vdwtype             =  Cut-off      ; 
+rvdw                =  1.0          ; recommended values for force field
+cutoff-scheme       =  Verlet       ; 
+
+DispCorr            =  EnerPres

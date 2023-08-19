@@ -1,0 +1,20 @@
+[ defaults ]
+; nbfunc        comb-rule       gen-pairs       fudgeLJ fudgeQQ
+1               2               yes             0.5     0.8333
+
+#include "sys-ffatoms.itp"
+
+#include "../../pfos-gaff/pfos-anion-ff.itp"                                                                                       
+#include "../../probes/linear-gaff/ch3_2ch2_1ch2ch3-ff.itp"
+
+#include "tip3p.itp"
+
+#include "ions.itp"
+
+[ system ]
+System in water
+
+[ molecules ]
+; Compound        nmols
+PFOS             1 
+PROB             1
