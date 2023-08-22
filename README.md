@@ -27,7 +27,7 @@ Usage
 
 Cite
 
-If you use the codes/notebooks in your work, please cite:
+If you use the codes or notebooks from this repo in your work, please cite:
 
 S. Dasetty, M. Topel, Y. Tang, Y. Wang, E. Jonas, S. Darling, J. Chen, A. L. Ferguson. "Data-driven discovery of linear molecular probes with optimal selective affinity for PFAS in water" XXXXX. DOI: XXXX
 
@@ -36,9 +36,9 @@ S. Dasetty, M. Topel, Y. Tang, Y. Wang, E. Jonas, S. Darling, J. Chen, A. L. Fer
   title={Data-driven discovery of linear molecular probes with optimal selective affinity for PFAS in water},
   author={Dasetty, S. and Topel, M. and Tang, Y. and Wang, Y. and Darling, S. and Chen, J. and Ferguson, A.L.},
   journal={XXXX},
-  volume={XX},
-  number={XX},
-  pages={XX-XX},
+  volume={XXXX},
+  number={XXXX},
+  pages={XXXX-XXXX},
   year={2023},
   publisher={XXXX}
 }
