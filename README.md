@@ -21,7 +21,7 @@ Usage
 
 1. [Codes](./Codes): Estimation of binding free energies & binding constants. Please see [Codes/README.md](./Codes/README.md) for getting started.
 2. [Data](./Data): GROMACS simulation files and PLUMED template file (master-pbmd-files-final) for performing enhanced sampling, probes embedding in latent space and helper data (VAE_data), JCED Supplementary Information data (JCED_data_each_cycle), binding free energy and binding constant all cycles combined and in each cycle (GPR_training_data),and probe structures in each cycle (smiles-each-cycle). Please see [Data/README.md](./Data/README.md).
-3. [Notebooks](./Notebooks): Analysis python notebooks for calculating potential of mean force (PMF) profiles, binding free energies & binding constants, VAE (variational autoencoder model) model, GPR (Gaussian process regression) training, and multi-objective Bayesian optimization using random scalarizations. Please see [Notebooks/README.md](./Notebooks/README.md).
+3. [Notebooks](./Notebooks): Analysis python notebooks for calculating potential of mean force (PMF) profiles, binding free energies & binding constants, GPR (Gaussian process regression) training, multi-objective Bayesian optimization using random scalarizations, and example notebooks to read data reported in Supplementary Information of JCED. Please see [Notebooks/README.md](./Notebooks/README.md).
    
 ---
 
