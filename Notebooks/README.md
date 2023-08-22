@@ -11,4 +11,4 @@ About
   
 6. Table-kb-topperforming_electronic.ipynb: Top performing candidates extraction (reported in Supplementary Information of JCED).
 
-7. example_notebook_to_read_SI_tables_deltaG_Kb.ipynb: Example notebook to read all binding free energies and binding constants reported in this work for further reserach.
+7. example_notebook_to_read_SI_tables_deltaG_Kb.ipynb: Example notebook to read all binding free energies and binding constants reported in this work for further research.
