@@ -4,7 +4,7 @@ Data-driven discovery of linear molecular probes with optimal selective affinity
 This repository demonstrates the data-driven discovery of linear molecular probes with optimal selective affinity for per- and polyfluoroalkyl substances (PFAS) in water. It integrates molecular dynamics (MD) simulations, enhanced sampling methods, deep representational learning via variational autoenecoders, surrogate model training and multi-objective Bayesian optimization using random scalarations. We use perfluorooctanesulfonic acid (PFOS) as the target PFAS and sodium dodecyl sulfate (SDS) as a representative interfernt to demonstrate our approach. 
 
 <p align="center">
-<img width="854" alt="Screenshot 2023-08-21 at 6 11 52 PM" src="https://github.com/Ferg-Lab/activeLearningPFASLinear/assets/38693318/1ebf43a0-7ce7-41ea-8c02-2c9926d806aa">
+<img width="843" alt="Screenshot 2023-08-22 at 11 00 17 AM" src="https://github.com/Ferg-Lab/activeLearningPFASLinear/assets/38693318/083976aa-eb17-43b8-b232-90b9bfeb7218">
 </p>
 
 ---
